@@ -1,0 +1,15 @@
+{
+  "name": "reactv18_boilerplate",
+  "version": "1.0.0",
+  "description": "React v18 Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juan-45/reactv18_boilerplate.git"
+  },
+  "author": "Juan Herrera",
+  "license": "ISC"
+}
