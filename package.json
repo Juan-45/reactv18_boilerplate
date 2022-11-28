@@ -4,12 +4,51 @@
   "description": "React v18 Boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new": "npm install && npm run build-dev",
+    "reset": "npm run clean && npm run new",
+    "build-dev": "rimraf dist && webpack --config webpack.dev.js",
+    "build-prod": "rimraf dist && webpack --config webpack.prod.js",
+    "build-babel": "npm run build-babel-server && npm run build-babel-client",
+    "build-babel-server": "babel src/server --out-dir ./dist",
+    "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
+    "clean": "rimraf dist node_modules",
+    "start": "node ./dist/server.js",
+    "nodemon": "nodemon ./dist/server.js",
+    "test": "jest ./src",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Juan-45/reactv18_boilerplate.git"
   },
   "author": "Juan Herrera",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^9.1.0",
+    "connect-livereload": "^0.6.1",
+    "css-loader": "^6.7.2",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.20",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-upgrade": "^1.0.1",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2"
+  }
 }
