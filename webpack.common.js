@@ -37,6 +37,11 @@ const client = {
     }),
   ],
   ...rootProperties,
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, "./src/components/"),
+    },
+  },
 };
 
 const server = {
