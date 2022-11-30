@@ -30,6 +30,11 @@ const client = {
   module: moduleObj,
   plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
   ...rootProperties,
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, "./src/components/"),
+    },
+  },
 };
 
 const server = {
