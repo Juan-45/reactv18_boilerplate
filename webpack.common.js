@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -28,7 +29,13 @@ const client = {
     path: path.resolve(__dirname, "dist/public"),
   },
   module: moduleObj,
-  plugins: [new HtmlWebPackPlugin({ template: "src/client/index.html" })],
+  plugins: [
+    new HtmlWebPackPlugin({ template: "src/client/index.html" }),
+    new webpack.ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom",
+    }),
+  ],
   ...rootProperties,
 };
 
