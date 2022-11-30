@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 
@@ -14,7 +15,12 @@ export default class WebServer {
     this.app = express();
     this.app.use(connectLiveReload());
     this.app.use(express.static("dist/public"));
+
+    this.app.get("/*", function (req, res) {
+      res.sendFile(path.join(__dirname, "public/index.html"));
+    });
   }
+
   start() {
     return new Promise((resolve, reject) => {
       try {
