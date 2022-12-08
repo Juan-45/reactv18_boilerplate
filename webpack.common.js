@@ -33,6 +33,7 @@ const client = {
   resolve: {
     alias: {
       components: path.resolve(__dirname, "./src/client/components/"),
+      theme: path.resolve(__dirname, "./src/client/theme/"),
     },
   },
 };
