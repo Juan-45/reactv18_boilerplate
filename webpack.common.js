@@ -32,7 +32,7 @@ const client = {
   ...rootProperties,
   resolve: {
     alias: {
-      components: path.resolve(__dirname, "./src/components/"),
+      components: path.resolve(__dirname, "./src/client/components/"),
     },
   },
 };
