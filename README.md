@@ -12,7 +12,7 @@
 
 - For a fresh start: npm run new
 - To start working in development mode: npm run build-dev
-- To start the server (use a separate terminal): npm run nodemon  
+- To start the server (use a separate terminal): npm run nodemon. Go to http://localhost:3000/.
 - To build production bundles: npm run build-prod
  
 
