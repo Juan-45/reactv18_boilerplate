@@ -7,6 +7,7 @@
 - Express 
 - Jest y React Testing Library
 - Nodemon & Livereload 
+- Prop-Types
 
 ## Setup
 
